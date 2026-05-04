@@ -1,0 +1,57 @@
+
+.container {
+  padding: 40px 32px;
+}
+
+.title {
+  font-family: serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+}
+
+p{
+  font-family: serif;
+  font-size: clamp(1.2rem, 2vw, 1.3rem);
+  text-align: justify;
+}
+
+.highlight {
+  color: #a69079;
+}
+
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 16px;
+}
+
+.imageCol {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.imageCol img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .textContainer {
+    padding: 40px 16px;
+  }
+  .buttonGroup {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+
+  }
+}
+

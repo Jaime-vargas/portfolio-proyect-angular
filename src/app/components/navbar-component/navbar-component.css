@@ -1,0 +1,19 @@
+.navbar {
+  background-color: #f8f7f5;
+  height: 80px;
+}
+.nameContainer{
+  padding-left: 25px;
+}
+.name{
+  color: #a69079;
+  font-size: 3rem;
+  font-family: serif;
+  line-height: 1;
+}
+.lastname{
+  font-size: .9rem;
+  font-weight: 600;
+  letter-spacing: 6px;
+  line-height: 1;
+}
