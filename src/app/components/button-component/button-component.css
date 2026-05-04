@@ -1,15 +1,45 @@
-.filledButton{
+.buttonComponent{
   padding: 8px 25px;
   border-radius: 10px;
-  background: #bc9c7c;
-  border: none;
-  color: white;
   letter-spacing: 1px;
   font-size: 12px;
   font-weight: 400;
   cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+@media (max-width: 768px) {
+  .buttonComponent{
+    width: 100%;
+  }
+}
+
+.filledButton{
+  background: #bc9c7c;
+  border: none;
+  color: white;
 }
 .filledButton:hover{
   background: #d0ad8a;
 }
+
+.outlineButton{
+  background: #f4f0ed;
+  border: 1px #bc9c7c solid;
+  color: #bc9c7c;
+}
+.outlineButton:hover{
+  background: #f3e9e1;
+}
+
+.textButton{
+  background: none;
+  border: none;
+  color: #bc9c7c;
+  font-weight: 500;
+}
+
 

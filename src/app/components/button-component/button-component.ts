@@ -1,11 +1,16 @@
-import { Component } from '@angular/core';
+import {Component, input} from '@angular/core';
+import {NgClass} from '@angular/common';
+import {NzIconDirective} from 'ng-zorro-antd/icon';
 
 @Component({
-  selector: 'app-filled-button-component',
-  imports: [],
-  templateUrl: './filled-button-component.html',
-  styleUrl: './filled-button-component.css',
+  selector: 'app-button-component',
+  imports: [
+    NgClass,
+    NzIconDirective,
+  ],
+  templateUrl: './button-component.html',
+  styleUrl: './button-component.css',
 })
-export class FilledButtonComponent {
-
+export class ButtonComponent {
+  variant = input<'filled'|'outline'|'text'>("filled");
 }
