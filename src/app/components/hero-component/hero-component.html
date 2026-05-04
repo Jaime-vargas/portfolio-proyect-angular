@@ -1,1 +1,37 @@
-<p>hero-component works!</p>
+<div nz-row class="hero">
+  <!-- TEXT -->
+  <div nz-col
+    [nzXs]="{ span: 24, order: 2}"
+    [nzMd]="{ span: 12, order: 1, push: 1}">
+    <div class="textContainer" nz-flex nzVertical nzGap="small">
+      <p class="goldText">
+        LOCUTORA Y PRODUCTORA DE <br /> CONTENIDO SONORO
+      </p>
+      <h1 class="text">
+        Transformo ideas en <br /> mensajes que se entienden...
+        <br />
+        y <span class="highlight">se escuchan.</span>
+      </h1>
+
+      <!-- BUTTONS -->
+      <div class="buttonGroup">
+        <app-button-component variant="filled">
+          <div body >
+            TRABAJEMOS JUNTOS
+          </div>
+        </app-button-component>
+        <app-button-component variant="outline">
+          <div body class="iconButton" >
+            <nz-icon style="font-size: 20px" nzType="caret-right" nzTheme="outline" />
+            ESCUCHAR DEMO
+          </div>
+        </app-button-component>
+      </div>
+    </div>
+  </div>
+  <div class="imageCol" nz-col
+       [nzXs]="{ span: 24, order: 1 }"
+       [nzMd]="{ span: 12, order: 2 }" >
+    <img src="./saira.png" alt="personal photo">
+  </div>
+</div>
