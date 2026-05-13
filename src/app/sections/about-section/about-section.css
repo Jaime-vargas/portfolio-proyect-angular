@@ -1,0 +1,23 @@
+.container {
+  padding: 40px 32px;
+  flex: 1;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: clamp(600, 200, 300);
+  line-height: 1.1;
+}
+
+p{
+  font-family: serif;
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .textContainer {
+    padding: 40px 16px;
+  }
+}
+

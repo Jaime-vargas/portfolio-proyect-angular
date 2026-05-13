@@ -1,5 +1,6 @@
 .hero {
-  background-color: #f5f0ed;
+  background: #F5F0EDFF;
+  background: linear-gradient(263deg,rgba(245, 240, 237, 1) 0%, rgba(245, 240, 237, 1) 50%, rgba(255, 255, 255, 1) 100%);
 }
 .textContainer {
   padding: 40px 0;
@@ -8,7 +9,7 @@
 .goldText{
   color: #a69079;
   letter-spacing: 4px;
-  font-size: clamp(1rem, 1vw, 2rem);
+  font-size: clamp(.9rem, 2vw, 2rem);
 }
 
 .text {
@@ -46,6 +47,10 @@
 }
 
 @media (max-width: 768px) {
+  .hero {
+    background: #F5F0EDFF;
+    background: linear-gradient(180deg,rgba(245, 240, 237, 1) 0%, rgba(245, 240, 237, 1) 50%, rgba(255, 255, 255, 1) 100%);
+  }
   .textContainer {
     padding: 40px 16px;
   }

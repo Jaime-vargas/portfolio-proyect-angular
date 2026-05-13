@@ -1,0 +1,16 @@
+<div class="sectionContainer">
+  <nz-row nzJustify="space-evenly">
+    <nz-col nzSpan="24">
+      <div nz-flex nzJustify="center">
+        <h2 class="title">MARCAS PARA LAS QUE HE TRABAJADO</h2>
+      </div>
+    </nz-col>
+    <nz-col nzSpan="24">
+      <div nz-flex nzJustify="space-evenly">
+        @for (branch of branches; track $index){
+          <img class="images" [src]="branch" alt="image">
+        }
+      </div>
+    </nz-col>
+  </nz-row>
+</div>

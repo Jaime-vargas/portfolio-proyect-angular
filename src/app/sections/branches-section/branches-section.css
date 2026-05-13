@@ -1,0 +1,24 @@
+.sectionContainer{
+  background-color: #f5f0ed;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.title{
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  padding-bottom: 50px;
+}
+
+.images{
+  width: 80px;
+  height: auto;
+}
+@media (max-width: 768px) {
+  .sectionContainer{
+    height: auto;
+  }
+  .images{
+    width: 40px;
+    height: auto;
+  }
+}

@@ -1,0 +1,8 @@
+<div class="container" nz-flex nzVertical>
+  <h1 class="title">{{title()}}</h1>
+  @for (paragraph of paragraphs(); track $index){
+    <p>{{paragraph}}</p>
+  }
+  <ng-content select="[buttons]">
+  </ng-content>
+</div>
