@@ -1,0 +1,37 @@
+
+<div class="sectionContainer">
+  <div class="player">
+    <!-- IMAGE -->
+    <div class="player-image" (click)="togglePlay()">
+      <img [src]="bgPlayer" alt="Demo">
+      <div class="play-button">
+        ▶
+      </div>
+    </div>
+    <!-- PROGRESS -->
+    <div class="player-progress">
+      <span>{{ currentTime() }}</span>
+      <input
+        type="range"
+        min="0"
+        [max]="duration()"
+        [value]="progress()"
+        (input)="seek($event)"
+      >
+      <span>{{ durationText()}}</span>
+    </div>
+
+
+    <!-- HIDDEN SOUNDCLOUD -->
+    <iframe
+      #soundcloudPlayer
+      class="hidden-player"
+      width="0"
+      height="0"
+      scrolling="no"
+      frameborder="no"
+      allow="autoplay"
+      [src]="playlist" >
+    </iframe>
+  </div>
+</div>
