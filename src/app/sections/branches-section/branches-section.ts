@@ -13,7 +13,7 @@ import {NzColDirective, NzRowDirective} from 'ng-zorro-antd/grid';
   styleUrl: './branches-section.css',
 })
 export class BranchesSection {
-
+  title='MARCAS PARA LAS QUE HE TRABAJADO';
   branches = [
     "/branches/canal44.webp",
     "/branches/promomedios.webp",

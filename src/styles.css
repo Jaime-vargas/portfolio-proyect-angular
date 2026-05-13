@@ -3,4 +3,23 @@
 .container {
   max-width: 1280px;
   margin: 0 auto;
+  box-shadow: #dcdbdb 1px 1px 6px;
+}
+
+.sectionContainer {
+  padding: 40px 32px;
+  flex: 1;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .buttonGroup {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+  }
 }

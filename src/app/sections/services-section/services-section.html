@@ -1,1 +1,25 @@
-<p>services-section works!</p>
+<div class="sectionContainer" nz-flex nzVertical>
+  <h1 class="title">{{title}}</h1>
+  @for (paragraph of paragraphs; track $index){
+    <p>{{paragraph}}</p>
+  }
+  <div nz-row [nzGutter]="[40, 20]">
+    @for (service of services; track $index){
+      <nz-col [nzXs]="{ span: 24}"
+              [nzMd]="{ span: 8}">
+        <div class="column">
+          <div class="shape">
+            <img [src]="service.logo">
+          </div>
+          <div>
+          <h2 class="sectionTitle">{{service.title}}</h2>
+          <p>{{service.text}}</p>
+            <app-button-component [variant]="'text'">
+              <div body>VER MÁS</div>
+            </app-button-component>
+          </div>
+        </div>
+      </nz-col>
+    }
+  </div>
+</div>

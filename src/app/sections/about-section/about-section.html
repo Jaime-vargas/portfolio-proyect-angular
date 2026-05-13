@@ -1,8 +1,20 @@
-<div class="container" nz-flex nzVertical>
-  <h1 class="title">{{title()}}</h1>
-  @for (paragraph of paragraphs(); track $index){
+<div class="sectionContainer" nz-flex nzVertical>
+  <h1 class="title">{{title}}</h1>
+  @for (paragraph of paragraphs; track $index){
     <p>{{paragraph}}</p>
   }
-  <ng-content select="[buttons]">
-  </ng-content>
+  <div class="buttonGroup">
+    <app-button-component variant="outline">
+      <div body>
+        <nz-icon nzType="customer-service" nzTheme="outline" />
+        SERVICIOS
+      </div>
+    </app-button-component>
+    <app-button-component variant="outline">
+      <div body >
+        <nz-icon nzType="paper-clip" nzTheme="outline" />
+        CURRÍCULUM
+      </div>
+    </app-button-component>
+  </div>
 </div>
