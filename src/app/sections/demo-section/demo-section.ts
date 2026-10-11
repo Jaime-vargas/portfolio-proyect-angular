@@ -27,11 +27,10 @@ export class DemoSection implements AfterViewInit {
   bgPlayer = '/player/bgmic.webp';
   trackId = ['1523484274','1523484061'];
 
-  setPlaylistID(id: string):SafeResourceUrl {
-    return this.playlist =
-      this.sanitizer.bypassSecurityTrustResourceUrl(
-        `https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${id}&auto_play=false&visual=false`
-      );
+  setPlaylistID(id: string): SafeResourceUrl {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(
+      `https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${id}&auto_play=false&visual=false`
+    );
   }
 
   @ViewChild('soundcloudPlayer')

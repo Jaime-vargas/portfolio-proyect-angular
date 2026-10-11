@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import {ButtonComponent} from '../../components/button-component/button-component';
 import {NzFlexDirective} from 'ng-zorro-antd/flex';
-import {NzIconDirective} from 'ng-zorro-antd/icon';
 import {NzColDirective, NzRowDirective} from 'ng-zorro-antd/grid';
 
 @Component({
@@ -9,7 +8,6 @@ import {NzColDirective, NzRowDirective} from 'ng-zorro-antd/grid';
   imports: [
     ButtonComponent,
     NzFlexDirective,
-    NzIconDirective,
     NzRowDirective,
     NzColDirective
   ],

@@ -1,9 +1,7 @@
-<button class="buttonComponent"
-        [ngClass]="{
-          'filledButton': variant() === 'filled',
-          'outlineButton': variant() === 'outline',
-          'textButton': variant() === 'text'
-        }">
+<button type="button" class="buttonComponent"
+        [class.filledButton]="variant() === 'filled'"
+        [class.outlineButton]="variant() === 'outline'"
+        [class.textButton]="variant() === 'text'">
   <ng-content select="[body]"></ng-content>
   @if (variant() === 'text') {
     <nz-icon nzType="arrow-right" nzTheme="outline"  />

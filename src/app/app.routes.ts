@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import {MainPageTs} from './pages/main-page.ts/main-page.ts';
+import {MainPage} from './pages/main-page/main-page';
 
 export const routes: Routes = [
-  {path: '', component: MainPageTs},
+  {path: '', component: MainPage},
 ];

@@ -1,5 +1,5 @@
 <div class="sectionContainer" nz-flex nzVertical>
-  <h1 class="title">{{title}}</h1>
+  <h2 class="title">{{title}}</h2>
   @for (paragraph of paragraphs; track $index){
     <p>{{paragraph}}</p>
   }
@@ -9,7 +9,7 @@
               [nzMd]="{ span: 8}">
         <div class="column">
           <div class="shape">
-            <img [src]="service.logo">
+            <img [src]="service.logo" alt="">
           </div>
           <div>
           <h2 class="sectionTitle">{{service.title}}</h2>

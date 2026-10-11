@@ -15,9 +15,9 @@ import {NzColDirective, NzRowDirective} from 'ng-zorro-antd/grid';
 export class BranchesSection {
   title='MARCAS PARA LAS QUE HE TRABAJADO';
   branches = [
-    "/branches/canal44.webp",
-    "/branches/promomedios.webp",
-    "/branches/megaradio.webp",
-    "/branches/omnilife.webp"
+    { name: 'Canal 44', logo: '/branches/canal44.webp' },
+    { name: 'Promomedios', logo: '/branches/promomedios.webp' },
+    { name: 'MegaRadio', logo: '/branches/megaradio.webp' },
+    { name: 'Omnilife Chivas', logo: '/branches/omnilife.webp' }
   ]
 }
