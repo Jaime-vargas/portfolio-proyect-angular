@@ -24,14 +24,17 @@ export class ServicesSection {
     {
       title: 'REDACCIÓN DE GUIONES',
       text: 'Te ayudo a construir mensajes con intención. Diseño contenidos para personas reales, contextos especificos y objetivos claros de marca. ',
-      logo: '/assets/pencil.webp'},
+      logo: '/assets/pencil.webp',
+      link: ''},
     {
       title: 'SERVICIOS DE VOZ Y LOCUCIÓN',
       text: 'Puedo ser la voz para tu marca o empresa en spots, videos corporativos, IVR, podcast, audiolibros y más.',
-      logo: '/assets/mic.webp'},
+      logo: '/assets/mic.webp',
+      link: '/servicios-de-voz'},
     {
       title: 'IDENTIDAD SONORA',
       text: 'Diseño identidad sonora para radio y proyectos digitales: desde la arquitectura auditiva hasta la producción completa',
-      logo: '/assets/headphones.webp'}
+      logo: '/assets/headphones.webp',
+      link: ''}
   ]
 }

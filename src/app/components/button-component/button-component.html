@@ -1,4 +1,6 @@
-<button type="button" class="buttonComponent"
+<button type="button"
+        class="buttonComponent"
+        (click)="navigate()"
         [class.filledButton]="variant() === 'filled'"
         [class.outlineButton]="variant() === 'outline'"
         [class.textButton]="variant() === 'text'">
