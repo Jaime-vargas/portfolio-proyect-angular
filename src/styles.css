@@ -11,6 +11,13 @@
   flex: 1;
 }
 
+.card {
+  background-color: #f7f4f1;
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, .08);
+}
+
 .buttonGroup {
   display: flex;
   gap: 16px;
