@@ -5,16 +5,19 @@ import {
   ViewChild
 } from '@angular/core';
 import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
+import {NzIconDirective} from 'ng-zorro-antd/icon';
 
 declare const SC: any;
 
 @Component({
   selector: 'app-demo-section',
-  imports: [],
+  imports: [NzIconDirective],
   templateUrl: './demo-section.html',
   styleUrl: './demo-section.css',
 })
 export class DemoSection implements AfterViewInit {
+
+  title = 'DEMO DE VOZ';
 
   playlist: SafeResourceUrl;
 
@@ -67,15 +70,29 @@ export class DemoSection implements AfterViewInit {
         this.currentTime.set(this.formatTime(event.currentPosition));
       }
     );
+
+    this.widget.bind(
+      SC.Widget.Events.PLAY,
+      () => this.isPlaying.set(true)
+    );
+
+    this.widget.bind(
+      SC.Widget.Events.PAUSE,
+      () => this.isPlaying.set(false)
+    );
+
+    this.widget.bind(
+      SC.Widget.Events.FINISH,
+      () => this.isPlaying.set(false)
+    );
   }
 
   togglePlay(): void {
-    if(this.isPlaying()) {
+    if (this.isPlaying()) {
       this.widget.pause();
     } else {
       this.widget.play();
     }
-    this.isPlaying.set(!this.isPlaying());
   }
 
 

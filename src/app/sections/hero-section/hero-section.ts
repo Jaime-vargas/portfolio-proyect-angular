@@ -18,4 +18,7 @@ import {NzIconDirective} from 'ng-zorro-antd/icon';
 })
 export class HeroSection {
 
+  scrollToDemo(): void {
+    document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 }

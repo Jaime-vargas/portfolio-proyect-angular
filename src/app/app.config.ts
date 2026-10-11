@@ -6,6 +6,7 @@ import {
   CaretRightOutline,
   CustomerServiceOutline,
   PaperClipOutline,
+  PauseOutline,
 } from '@ant-design/icons-angular/icons';
 
 import { routes } from './app.routes';
@@ -16,6 +17,7 @@ const icons = [
   CaretRightOutline,
   CustomerServiceOutline,
   PaperClipOutline,
+  PauseOutline,
 ];
 export const appConfig: ApplicationConfig = {
   providers: [

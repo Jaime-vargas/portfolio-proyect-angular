@@ -1,11 +1,16 @@
 
-<div class="sectionContainer">
+<div class="sectionContainer" id="demo">
+  <h2 class="title">{{title}}</h2>
   <div class="player">
     <!-- IMAGE -->
     <div class="player-image" (click)="togglePlay()">
       <img [src]="bgPlayer" alt="Micrófono de estudio con filtro antiviento">
       <div class="play-button">
-        ▶
+        @if (isPlaying()) {
+          <nz-icon nzType="pause" nzTheme="outline" />
+        } @else {
+          <nz-icon nzType="caret-right" nzTheme="outline" />
+        }
       </div>
     </div>
     <!-- PROGRESS -->

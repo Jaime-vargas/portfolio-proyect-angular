@@ -1,3 +1,13 @@
+.title {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: clamp(600, 200, 300);
+  line-height: 1.1;
+}
+
+#demo {
+  scroll-margin-top: 96px;
+}
+
 .player {
   background: #f7f4f1;
   border-radius: 24px;
