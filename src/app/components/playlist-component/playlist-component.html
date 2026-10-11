@@ -1,0 +1,16 @@
+@if (player.tracks().length) {
+  <div class="card">
+    <h3 class="playlistTitle">PLAYLIST</h3>
+    @for (audio of player.tracks(); track audio.link; let i = $index) {
+      <button type="button"
+              class="track"
+              [class.active]="i === player.currentIndex()"
+              (click)="player.selectTrack(i)">
+        <nz-icon class="trackIcon"
+                 [nzType]="player.trackIconType(i)"
+                 nzTheme="outline" />
+        <span class="trackTitle">{{ audio.titulo }}</span>
+      </button>
+    }
+  </div>
+}
