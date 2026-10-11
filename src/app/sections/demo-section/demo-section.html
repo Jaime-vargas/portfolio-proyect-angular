@@ -1,43 +1,65 @@
-
 <div class="sectionContainer" id="demo">
   <h2 class="title">{{title}}</h2>
-  <div class="player">
-    <!-- IMAGE -->
-    <div class="player-image" (click)="togglePlay()">
-      <img [src]="bgPlayer" alt="Micrófono de estudio con filtro antiviento">
-      <div class="play-button">
-        @if (isPlaying()) {
-          <nz-icon nzType="pause" nzTheme="outline" />
-        } @else {
-          <nz-icon nzType="caret-right" nzTheme="outline" />
+
+  @if (playerSrc(); as src) {
+    <div class="playerLayout">
+
+      <!-- PLAYER -->
+      <div class="player">
+        <div class="player-image" (click)="togglePlay()">
+          <img [src]="bgPlayer" alt="Micrófono de estudio con filtro antiviento">
+          <div class="play-button">
+            @if (isPlaying()) {
+              <nz-icon nzType="pause" nzTheme="outline" />
+            } @else {
+              <nz-icon nzType="caret-right" nzTheme="outline" />
+            }
+          </div>
+        </div>
+
+        <!-- PROGRESS -->
+        <div class="player-progress">
+          <span>{{ currentTime() }}</span>
+          <input
+            type="range"
+            min="0"
+            [max]="duration()"
+            [value]="progress()"
+            (input)="seek($event)"
+          >
+          <span>{{ durationText() }}</span>
+        </div>
+
+        <!-- HIDDEN SOUNDCLOUD -->
+        <iframe
+          #soundcloudPlayer
+          class="hidden-player"
+          width="0"
+          height="0"
+          scrolling="no"
+          frameborder="no"
+          allow="autoplay"
+          title="Reproductor de audio de SoundCloud"
+          [src]="src">
+        </iframe>
+      </div>
+
+      <!-- PLAYLIST -->
+      <div class="playlist card">
+        <h3 class="playlistTitle">PLAYLIST</h3>
+        @for (audio of tracks(); track audio.link; let i = $index) {
+          <button type="button"
+                  class="track"
+                  [class.active]="i === currentIndex()"
+                  (click)="selectTrack(i)">
+            <nz-icon class="trackIcon"
+                     [nzType]="trackIconType(i)"
+                     nzTheme="outline" />
+            <span class="trackTitle">{{ audio.titulo }}</span>
+          </button>
         }
       </div>
-    </div>
-    <!-- PROGRESS -->
-    <div class="player-progress">
-      <span>{{ currentTime() }}</span>
-      <input
-        type="range"
-        min="0"
-        [max]="duration()"
-        [value]="progress()"
-        (input)="seek($event)"
-      >
-      <span>{{ durationText()}}</span>
-    </div>
 
-
-    <!-- HIDDEN SOUNDCLOUD -->
-    <iframe
-      #soundcloudPlayer
-      class="hidden-player"
-      width="0"
-      height="0"
-      scrolling="no"
-      frameborder="no"
-      allow="autoplay"
-      title="Reproductor de audio de SoundCloud"
-      [src]="playlist" >
-    </iframe>
-  </div>
+    </div>
+  }
 </div>
