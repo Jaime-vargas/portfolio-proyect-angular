@@ -2,9 +2,12 @@ import {
   Component,
   effect,
   ElementRef,
+  inject,
+  PLATFORM_ID,
   signal,
   viewChild,
 } from '@angular/core';
+import {isPlatformBrowser} from '@angular/common';
 import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 import {HttpClient} from '@angular/common/http';
 import {NzIconDirective} from 'ng-zorro-antd/icon';
@@ -40,20 +43,24 @@ export class DemoSection {
 
   widget: any;
 
+  private platformId = inject(PLATFORM_ID);
+
   constructor(
     private sanitizer: DomSanitizer,
     private http: HttpClient,
   ) {
-    this.http.get<Track[]>('/data/playlist.json').subscribe((tracks) => {
-      this.tracks.set(tracks);
-      if (tracks.length) {
-        this.playerSrc.set(this.buildSrc(tracks[0].link));
-      }
-    });
+    if (isPlatformBrowser(this.platformId)) {
+      this.http.get<Track[]>('/data/playlist.json').subscribe((tracks) => {
+        this.tracks.set(tracks);
+        if (tracks.length) {
+          this.playerSrc.set(this.buildSrc(tracks[0].link));
+        }
+      });
+    }
 
     effect(() => {
       const iframe = this.soundcloudPlayer();
-      if (iframe && !this.widget) {
+      if (isPlatformBrowser(this.platformId) && iframe && !this.widget) {
         this.initWidget(iframe.nativeElement);
       }
     });

@@ -12,6 +12,7 @@ import {
 
 import { routes } from './app.routes';
 import {provideNzIcons} from 'ng-zorro-antd/icon';
+import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 
 const icons = [
   ArrowRightOutline,
@@ -25,6 +26,6 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
     provideHttpClient(),
-    provideNzIcons(icons)
+    provideNzIcons(icons), provideClientHydration(withEventReplay())
   ]
 };
