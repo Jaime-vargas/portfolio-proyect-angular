@@ -1,5 +1,59 @@
 <div class="container">
-  <div class="sectionContainer">
-    <h1 class="title">SERVICIOS DE VOZ Y LOCUCIÓN</h1>
-  </div>
+  <main class="page">
+
+    <!-- PANEL PRINCIPAL -->
+    <section class="card main" aria-labelledby="servicios-voz-title">
+      <div class="layout">
+        <div class="textCol">
+          <p class="eyebrow">SERVICIOS</p>
+          <h1 id="servicios-voz-title" class="title">Servicios de voz<br>y locución</h1>
+          <div class="tiny-rule"></div>
+          <p class="intro">Puedo ser la voz para tu marca o empresa en:</p>
+
+          <div class="services">
+            @for (service of services; track service.text) {
+              <div class="service">
+                <span class="service-icon">
+                  <nz-icon [nzType]="service.icon" nzTheme="outline" />
+                </span>
+                <span>{{ service.text }}</span>
+              </div>
+            }
+          </div>
+        </div>
+
+        <div class="media">
+          <app-player></app-player>
+          <div class="wave" aria-hidden="true">
+            @for (bar of waveBars; track $index) {
+              <span [style.height.px]="bar"></span>
+            }
+          </div>
+
+          <app-playlist></app-playlist>
+        </div>
+      </div>
+
+      <button type="button" class="cta">
+        <nz-icon nzType="sound" nzTheme="outline" />
+        <span>PUEDO HACER QUE TU MARCA SUENE ASÍ</span>
+      </button>
+    </section>
+
+    <!-- MARCAS (CATWALK) -->
+    <section class="card brands" aria-label="Marcas para las que he grabado">
+      <h2 class="brands-title">ESTAS SON LAS MARCAS<br>PARA LAS QUE HE GRABADO</h2>
+      <div class="catwalk">
+        <div class="catwalk-track">
+          @for (brand of brands; track brand.name) {
+            <img class="brand-logo" [src]="brand.logo" [alt]="'Logo de ' + brand.name">
+          }
+          @for (brand of brands; track brand.name) {
+            <img class="brand-logo" [src]="brand.logo" alt="" aria-hidden="true">
+          }
+        </div>
+      </div>
+    </section>
+
+  </main>
 </div>

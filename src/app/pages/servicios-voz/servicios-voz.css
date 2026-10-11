@@ -1,5 +1,210 @@
+.page {
+  padding: 24px 20px 30px;
+}
+
+/* PANEL PRINCIPAL */
+.main {
+  padding: 42px 44px 18px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #917f73;
+  font-weight: 700;
+  margin: 0 0 20px;
+}
+
 .title {
-  font-size: clamp(2rem, 5vw, 3.2rem);
-  font-weight: clamp(600, 200, 300);
-  line-height: 1.1;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  font-size: clamp(38px, 4vw, 58px);
+  line-height: 1.05;
+  letter-spacing: -1.7px;
+  margin: 0;
+}
+
+.tiny-rule {
+  width: 40px;
+  height: 2px;
+  background: #c9a58b;
+  margin: 23px 0;
+}
+
+.intro {
+  color: #6c6763;
+  font-size: 15px;
+  margin: 0 0 35px;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 30px;
+  row-gap: 23px;
+}
+
+.service {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 54px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.service-icon {
+  flex: 0 0 43px;
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #f2eae2;
+  color: #93735e;
+  font-size: 21px;
+}
+
+/* MEDIA */
+.media {
+  min-width: 0;
+}
+
+app-player {
+  display: block;
+}
+
+.wave {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  overflow: hidden;
+  color: #cbbab0;
+}
+
+.wave span {
+  display: block;
+  width: 2px;
+  flex: 0 0 2px;
+  border-radius: 3px;
+  background: currentColor;
+  opacity: .78;
+}
+
+app-playlist {
+  display: block;
+  margin-top: 6px;
+}
+
+/* CTA */
+.cta {
+  width: min(100%, 610px);
+  min-height: 64px;
+  margin: 19px auto 0;
+  display: flex;
+  gap: 17px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 13px;
+  background: linear-gradient(110deg, #bb8b67, #cda27e);
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: .15px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.cta:hover {
+  background: linear-gradient(110deg, #aa7651, #bb8e69);
+}
+
+.cta nz-icon {
+  font-size: 28px;
+}
+
+/* MARCAS (CATWALK) */
+.brands {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 29px 42px;
+  margin-top: 20px;
+}
+
+.brands-title {
+  flex: 0 0 255px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.catwalk {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+
+.catwalk-track {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  width: max-content;
+  animation: catwalk 28s linear infinite;
+}
+
+.catwalk:hover .catwalk-track {
+  animation-play-state: paused;
+}
+
+.brand-logo {
+  max-height: 46px;
+  max-width: 120px;
+  width: auto;
+  flex-shrink: 0;
+  object-fit: contain;
+  filter: grayscale(1) contrast(1.05);
+  opacity: .85;
+}
+
+@keyframes catwalk {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 1000px) {
+  .layout { gap: 32px; }
+  .main { padding: 35px 30px 20px; }
+  .brands { flex-wrap: wrap; }
+  .brands-title { flex: 1 0 100%; }
+}
+
+@media (max-width: 700px) {
+  .page { padding: 12px 12px 20px; }
+  .main { padding: 30px 22px 22px; }
+  .layout { grid-template-columns: 1fr; gap: 24px; }
+  .services { column-gap: 16px; row-gap: 18px; }
+  .service { font-size: 12px; gap: 9px; }
+  .service-icon { width: 37px; height: 37px; flex-basis: 37px; font-size: 18px; }
+  .brands { padding: 25px 22px; gap: 25px; }
+  .catwalk-track { gap: 40px; }
+  .cta { font-size: 12px; }
+}
+
+@media (max-width: 370px) {
+  .services { grid-template-columns: 1fr; }
 }

@@ -4,10 +4,17 @@ import { provideHttpClient } from '@angular/common/http';
 
 import {
   ArrowRightOutline,
+  AudioOutline,
+  BookOutline,
   CaretRightOutline,
   CustomerServiceOutline,
+  MobileOutline,
+  NotificationOutline,
   PaperClipOutline,
   PauseOutline,
+  PhoneOutline,
+  SoundOutline,
+  VideoCameraOutline,
 } from '@ant-design/icons-angular/icons';
 
 import { routes } from './app.routes';
@@ -16,10 +23,17 @@ import { provideClientHydration, withEventReplay } from '@angular/platform-brows
 
 const icons = [
   ArrowRightOutline,
+  AudioOutline,
+  BookOutline,
   CaretRightOutline,
   CustomerServiceOutline,
+  MobileOutline,
+  NotificationOutline,
   PaperClipOutline,
   PauseOutline,
+  PhoneOutline,
+  SoundOutline,
+  VideoCameraOutline,
 ];
 export const appConfig: ApplicationConfig = {
   providers: [
